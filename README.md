@@ -27,6 +27,11 @@ Then open `http://localhost:3000` in your favorite browser.
 Now edit `src/App.js`.  
 Your changes will appear without reloading the browser like in [this video](http://vimeo.com/100010922).
 
+To run the production build process:
+```
+node prod
+```
+
 ### Using `0.0.0.0` as Host
 
 You may want to change the host in `dev.js` from `localhost` to `0.0.0.0` to allow access from same WiFi network. This is not enabled by default because it is reported to cause problems on Windows. This may also be useful if you're using a VM.

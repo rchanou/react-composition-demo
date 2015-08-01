@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import Slideshow from './Slideshow';
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+ReactDOM.render(<Slideshow />, document.getElementById('root'));

@@ -1,7 +1,7 @@
 // Component code to be transpiled with Babel
-import React from 'react'; // import and from keywords
+import React from 'react';
 
-class MyComponent extends React.Component { // idiomatic class
+class MyComponent extends React.Component { // idiomatic ES6 class
   static defaultProps = { text: 'ES2015+' };
   // ^ default props are just static property of class
 

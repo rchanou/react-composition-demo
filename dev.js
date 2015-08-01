@@ -2,6 +2,15 @@ var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var path = require('path');
 
+/*
+  this is the transpilation script for development.
+  it does not actually create transpiled files.
+  instead, it keeps them in memory and serves them with a local server.
+  this allows hot reloading of components.
+  only changes to files that export react components will be hot-reloaded.
+  the browser console will print when changes are hot-loaded, or if not, why.
+*/
+
 // create a config object containing various webpack options
 var config = {
   // this enables source-mapping for your transpiled files
@@ -18,7 +27,7 @@ var config = {
 
 
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
     publicPath: '/'
   },
@@ -50,12 +59,19 @@ var config = {
   }
 };
 
+// create a webpack compiler based on your config
+var compiler = webpack(config);
 
-new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
-  hot: true,
-  historyApiFallback: true
-}).listen(3000, 'localhost', function (err, result) {
+// pass compiler and server options into server constructor
+// then listen on a port
+new WebpackDevServer(
+  compiler,
+  {
+    hot: true,
+    historyApiFallback: true
+  }
+)
+.listen(3000, 'localhost', function (err, result) {
   if (err) {
     console.log(err);
   }
