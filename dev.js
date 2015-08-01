@@ -1,0 +1,64 @@
+var webpack = require('webpack');
+var WebpackDevServer = require('webpack-dev-server');
+var path = require('path');
+
+// create a config object containing various webpack options
+var config = {
+  // this enables source-mapping for your transpiled files
+  devtool: 'source-map',
+
+  // your app entry points.
+  // starting with these files/modules,
+  // webpack builds your program's dependency graph.
+  entry: [
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    path.join(__dirname, 'src', 'index')//'./src/index'
+  ],
+
+
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/'
+  },
+
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
+
+
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+
+  //
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        loaders: ['react-hot', 'babel?stage=0'],
+        include: path.join(__dirname, 'src')
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      }
+    ]
+  }
+};
+
+
+new WebpackDevServer(webpack(config), {
+  publicPath: config.output.publicPath,
+  hot: true,
+  historyApiFallback: true
+}).listen(3000, 'localhost', function (err, result) {
+  if (err) {
+    console.log(err);
+  }
+
+  console.log('Listening at localhost:3000');
+});

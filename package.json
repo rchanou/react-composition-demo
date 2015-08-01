@@ -1,19 +1,17 @@
 {
-  "name": "react-hot-boilerplate",
-  "version": "1.0.0",
-  "description": "Boilerplate for ReactJS project with hot code reloading",
+  "name": "react-composition-demo",
+  "version": "0.0.1",
+  "description": "Demo for Webpack and Component Composition (for ReactJS OC)",
   "scripts": {
-    "lint": "eslint src",
-    "start": "node server.js"
+    "start": "node dev.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaearon/react-hot-boilerplate.git"
+    "url": "https://github.com/rchanou/react-composition-demo.git"
   },
   "keywords": [
-    "boilerplate",
-    "edit",
-    "hmr",
+    "reactjs-oc",
+    "composition",
     "hot",
     "live",
     "react",
@@ -21,23 +19,25 @@
     "reload",
     "webpack"
   ],
-  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "author": "Ronald ChanOu (http://github.com/rchanou)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gaearon/react-hot-boilerplate/issues"
+    "url": "https://github.com/rchanou/react-composition-demo/issues"
   },
-  "homepage": "https://github.com/gaearon/react-hot-boilerplate",
+  "homepage": "https://github.com/rchanou/react-composition-demo",
   "devDependencies": {
     "babel-core": "^5.4.7",
-    "babel-eslint": "^3.1.9",
     "babel-loader": "^5.1.2",
-    "eslint-plugin-react": "^2.3.0",
+    "css-loader": "^0.15.2",
+    "extract-text-webpack-plugin": "^0.8.2",
     "react-hot-loader": "^1.2.7",
+    "style-loader": "^0.12.3",
     "webpack": "^1.9.6",
     "webpack-dev-server": "^1.8.2"
   },
   "dependencies": {
     "react": "^0.14.0-beta1",
-    "react-dom": "^0.14.0-beta1"
+    "react-dom": "^0.14.0-beta1",
+    "react-toggle": "^1.2.3"
   }
 }

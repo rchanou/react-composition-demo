@@ -1,42 +1,35 @@
-react-hot-boilerplate
-=====================
+React Composition Demo
+======================
 
-The minimal dev environment to enable live-editing React components.
+(based on [react-hot-boilerplate](http://github.com/gaearon/react-hot-boilerplate) by Dan Abramov)
+
+This slideshow and demo will be/was presented by [Ronald ChanOu](http://twitter.com/ronaldchanou)
+at PeopleSpace (Irvine, CA), for the ReactJS OC Meetup group.
+
+### Goals
+
+* Demo webpack build processes for both development and production
+* Demo goodness enabled by webpack such as: live-reloading, ES6+ and JSX transpilation with Babel, and asset bundling (CSS, fonts, etc.)
+* With ES6, demo various methods of component composition, from simple to advanced
+* Demo React v0.14
 
 ### Usage
 
+(Note: you may need to use npm 3: `npm install -g npm@3.0-latest`)
+
+After cloning/downloading this repo and navigating to it in the command line:
 ```
 npm install
-npm start
-open http://localhost:3000
+node dev
 ```
+Then open `http://localhost:3000` in your favorite browser.
 
 Now edit `src/App.js`.  
 Your changes will appear without reloading the browser like in [this video](http://vimeo.com/100010922).
 
-### Linting
-
-This boilerplate project includes React-friendly ESLint configuration.
-
-```
-npm run lint
-```
-
 ### Using `0.0.0.0` as Host
 
-You may want to change the host in `server.js` and `webpack.config.js` from `localhost` to `0.0.0.0` to allow access from same WiFi network. This is not enabled by default because it is reported to cause problems on Windows. This may also be useful if you're using a VM.
-
-### Missing Features
-
-This boilerplate is purposefully simple to show the minimal configuration for React Hot Loader. For a real project, you'll want to add a separate config for production with hot reloading disabled and minification enabled. You'll also want to add a router, styles and maybe combine dev server with an existing server. This is out of scope of this boilerplate, but you may want to look into [other starter kits](https://github.com/gaearon/react-hot-loader/blob/master/docs/README.md#starter-kits).
-
-### Dependencies
-
-* React
-* Webpack
-* [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
-* [babel-loader](https://github.com/babel/babel-loader)
-* [react-hot-loader](https://github.com/gaearon/react-hot-loader)
+You may want to change the host in `dev.js` from `localhost` to `0.0.0.0` to allow access from same WiFi network. This is not enabled by default because it is reported to cause problems on Windows. This may also be useful if you're using a VM.
 
 ### Resources
 
