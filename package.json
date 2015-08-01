@@ -10,12 +10,12 @@
     "url": "https://github.com/rchanou/react-composition-demo.git"
   },
   "keywords": [
-    "reactjs-oc",
     "composition",
     "hot",
     "live",
     "react",
     "reactjs",
+    "reactjs-oc",
     "reload",
     "webpack"
   ],
@@ -36,6 +36,7 @@
     "webpack-dev-server": "^1.8.2"
   },
   "dependencies": {
+    "jquery": "^2.1.4",
     "react": "^0.14.0-beta1",
     "react-dom": "^0.14.0-beta1",
     "react-toggle": "^1.2.3"
