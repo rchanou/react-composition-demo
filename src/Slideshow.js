@@ -8,19 +8,21 @@ import './css/toggle-style.css';
 import Slide1A from './slides/1a-es5-react';
 
 
+const slides = [
+  <Slide1A />
+];
+
 export default class Slideshow extends React.Component {
 
-  /*this.state = {
-    slide: Slide1A
-  };*/
+  state = {
+    slideIndex: 0
+  };
 
   render(){
-    //console.log(typeof this.state.slide);
+    return slides[this.state.slideIndex];
+  }
 
-    return <div>
-      <h1>Hello, Joe.</h1>
-      <Toggle
-      />
-    </div>;
+  componentDidMount(){
+
   }
 }
