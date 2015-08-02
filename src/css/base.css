@@ -1,5 +1,10 @@
 /*
+  this is just a small "reset" css that makes the slide components
+  more presentation-friendly without too much effort.
 
+  i also have to define a @font-face here. note the url for the src property.
+  with css-loader, style-loader, and file-loader, webpack can parse and
+  include these assets like it does with js imports!
 */
 
 @font-face {
@@ -12,7 +17,7 @@ body {
   width: 100%;
   height: 100%;
   font-family: Montserrat;
-  background-color: hsl(0,0%,22%);
+  //background-color: hsl(0,0%,22%);
   //color: white;
   color: hsl(33,88%,55%);
 }

@@ -1,84 +1,88 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
-import { Spring } from 'react-motion';
 
-class MouseXTracker extends React.Component {
-  state = { x: 0 };
+/*
+  examples of render-as-a-prop components. for more awesome examples,
+  check out react-motion and react-radio-group by chenglou.
+*/
 
-  handleMouseMove = e => {
-    this.setState({ x: e.pageX });
+class Hover extends React.Component {
+  state = { hovering: false }
+
+  _onMouseOver = () => {
+    this.setState({ hovering: true });
+  }
+
+  _onMouseOut = () => {
+    this.setState({ hovering: false });
+  }
+
+  eventHandlerProps = {
+    onMouseOver: this._onMouseOver,
+    onMouseOut: this._onMouseOut
   }
 
   render(){
-    return this.props.children(this.state.x);
-  }
-
-  componentDidMount(){
-    $(window).mousemove(this.handleMouseMove);
-  }
-
-  componentWillUnmount(){
-    $(window).off('mousemove', this.handleMouseMove);
+    let me = this.props.children(this.state.hovering);
+    return React.cloneElement(me, this.eventHandlerProps);
   }
 }
 
-let xDisplay = <MouseXTracker>
-  {x => <div>X: {x}</div>}
-</MouseXTracker>;
+class Rotate extends React.Component {
+  state = { value: 0 }
 
-class MouseYTracker extends React.Component {
-  state = { y: 0 };
-
-  handleMouseMove = e => {
-    this.setState({ y: e.pageY });
+  _rotate = () => {
+    this.setState({
+      value: (this.state.value === 359)? 0: (this.state.value + 1)
+    });
   }
 
   render(){
-    return this.props.children(this.state.y);
+    return this.props.children(this.state.value);
   }
 
   componentDidMount(){
-    $(window).mousemove(this.handleMouseMove);
+    this._rotateInterval = setInterval(() => {
+      this.setState({
+        value: (this.state.value === 359)? 0: (this.state.value + 1)
+      });
+    }, this.props.interval);
   }
 
   componentWillUnmount(){
-    $(window).off('mousemove', this.handleMouseMove);
+    clearInterval(this._rotateInterval);
   }
 }
 
-let colorControl = <MouseYTracker>
-  {y => <div
-    style={{
-      backgroundColor: `hsl(${y / window.innerHeight * 360}, 50%, 50%)`,
-      width: 100,
-      height: 50
-    }}
-  />}
-</MouseYTracker>;
+let displayHover = <Hover>
+  {hovering => <div>
+    {hovering? 'Hovering': 'Not Hovering'}
+  </div>}
+</Hover>;
 
-let compass = <MouseXTracker>
-  {x => <MouseYTracker>
-    {y => <div
-      style={{
-        width: 0, height: 0,
-        borderLeft: '20px solid transparent',
-        borderRight: '20px solid transparent',
-        borderBottom: '40px solid pink',
-        transform: 'rotate(18deg)'
-      }}
-    />}
-  </MouseYTracker>}
-</MouseXTracker>;
+let displayRotate = <Rotate interval={50}>
+  {val => <div>{val}</div>}
+</Rotate>;
 
-let animatedList = <div>
-
-</div>;
+let arrow =
+  <Rotate interval={30}>
+    {angle => <Hover>
+      {hovering => <div
+        style={{
+          transform: `rotate(${angle}deg)`,
+          borderBottom: `40px solid ${hovering? 'pink': 'steelblue'}`,
+          width: 0, height: 0,
+          borderLeft: '20px solid transparent',
+          borderRight: '20px solid transparent',
+        }}
+      />}
+    </Hover>}
+  </Rotate>;
 
 let page = <div style={{ width: '100%', height: '100%' }}>
-  {xDisplay}
-  {colorControl}
-  {compass}
+  {displayHover}
+  {displayRotate}
+  {arrow}
 </div>;
 
 export default page;
