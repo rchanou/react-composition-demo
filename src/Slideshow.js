@@ -6,19 +6,18 @@ import $ from 'jquery';
 import './css/base.css';
 
 // slides
-import Slide1A from './slides/01a-es5-react';
 import slide3 from './slides/03-constant-element';
 
 
 
-
 import slide8 from './slides/08-render-as-prop';
+import slide10 from './slides/10-extending-children';
 
 
 const slides = [
-  <Slide1A />,
   slide3,
-  slide8
+  slide8,
+  slide10
 ];
 
 
