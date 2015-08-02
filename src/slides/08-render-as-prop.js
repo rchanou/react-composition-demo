@@ -7,6 +7,10 @@ import ReactDOM from 'react-dom';
 */
 
 class Hover extends React.Component {
+  static propTypes = {
+    children: React.PropTypes.func.isRequired
+  }
+
   state = { hovering: false }
 
   _onMouseOver = () => {
@@ -17,14 +21,19 @@ class Hover extends React.Component {
     this.setState({ hovering: false });
   }
 
-  eventHandlerProps = {
+  _eventHandlerProps = {
     onMouseOver: this._onMouseOver,
     onMouseOut: this._onMouseOut
   }
 
   render(){
+    // for this component, this.props.children must be a function
+    // that returns a React element
     let me = this.props.children(this.state.hovering);
-    return React.cloneElement(me, this.eventHandlerProps);
+
+    // Since 'me' is a React element, it is opaque
+    // and props must be added to it with React.cloneElement
+    return React.cloneElement(me, this._eventHandlerProps);
   }
 }
 
@@ -54,15 +63,18 @@ class Rotate extends React.Component {
   }
 }
 
+
 let displayHover = <Hover>
   {hovering => <div>
     {hovering? 'Hovering': 'Not Hovering'}
   </div>}
 </Hover>;
 
+
 let displayRotate = <Rotate interval={50}>
   {val => <div>{val}</div>}
 </Rotate>;
+
 
 let arrow =
   <Rotate interval={30}>
@@ -78,6 +90,7 @@ let arrow =
       />}
     </Hover>}
   </Rotate>;
+
 
 let page = <div style={{ width: '100%', height: '100%' }}>
   {displayHover}
