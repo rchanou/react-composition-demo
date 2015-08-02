@@ -15,7 +15,21 @@ at PeopleSpace (Irvine, CA), for the ReactJS OC Meetup group.
 
 ### Usage
 
-(Note: you may need to use npm 3: `npm install -g npm@3.0-latest`)
+#### Important note
+
+Because I am using React 0.14, you will get peer dependency issues with npm versions less than 3, so unless you know how to solve that yourself (I don't), I recommend installing npm 3:
+```
+npm install -g npm@3.0-latest
+```
+On Windows, it may not update PATH correctly (`npm -v` still shows a version less than 3). To fix that:
+* Type `where npm` to list all locations for `npm`
+* Try `npm -v` in the folder for each one until you get the one with version 3
+* Edit the system variable `PATH` to use this. I highly recommend installing [Rapid Environment Editor](http://www.rapidee.com) and running it as administrator to more easily and safely edit it. Right-click "Path", add value, enter the correct npm 3 path,  make sure it is above any other npm paths, and save. Close and re-open any `cmd` for the new `PATH` to take.
+
+(I do apologize for any inconvenience this causes. I tend to live on the edge.)
+
+
+#### Initialization and build
 
 After cloning/downloading this repo and navigating to it in the command line:
 ```
