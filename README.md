@@ -4,7 +4,8 @@ React Composition Demo
 (based on [react-hot-boilerplate](http://github.com/gaearon/react-hot-boilerplate) by Dan Abramov)
 
 This slideshow and demo will be/was presented by [Ronald ChanOu](http://twitter.com/ronaldchanou)
-at PeopleSpace (Irvine, CA), for the ReactJS OC Meetup group.
+at PeopleSpace (Irvine, CA), for the ReactJS OC Meetup group. The slideshow is itself a React
+component built using the techniques in the talk.
 
 ### Goals
 
@@ -23,8 +24,8 @@ npm install -g npm@3.0-latest
 ```
 On Windows, it may not update PATH correctly (`npm -v` still shows a version less than 3). To fix that:
 * Type `where npm` to list all locations for `npm`
-* Try `npm -v` in the folder for each one until you get the one with version 3
-* Edit the system variable `PATH` to use this. I highly recommend installing [Rapid Environment Editor](http://www.rapidee.com) and running it as administrator to more easily and safely edit it. Right-click "Path", add value, enter the correct npm 3 path,  make sure it is above any other npm paths, and save. Close and re-open any `cmd` for the new `PATH` to take.
+* Try `npm -v` in the folder for each one until you get the one with version 3+
+* Edit the system variable `PATH` to use this. I highly recommend installing [Rapid Environment Editor](http://www.rapidee.com) and running it as administrator to more easily and safely edit `PATH`. In the editor, right-click "Path", select "Add Value", enter the correct npm 3 path,  make sure it is above any other npm paths, and save. Close and re-open any `cmd` windows for the new `PATH` to take.
 
 (I do apologize for any inconvenience this causes. I tend to live on the edge.)
 
