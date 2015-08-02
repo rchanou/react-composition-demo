@@ -53,7 +53,13 @@ var config = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        loader: 'style-loader!css-loader',
+        include: path.join(__dirname, 'src')
+      },
+      {
+        test: /\.(eot|woff|ttf|svg|otf)/,
+        loader: 'file-loader',
+        include: path.join(__dirname, 'src')
       }
     ]
   }

@@ -3,16 +3,22 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 
 // with webpack and appropriate loaders, you can include non-js assets
-//import './css/toggle-style.css';
-//import Toggle from 'react-toggle';
+import './css/base.css';
 
 // slides
-import Slide1A from './slides/1a-es5-react';
-import slide3 from './slides/3-constant-element';
+import Slide1A from './slides/01a-es5-react';
+import slide3 from './slides/03-constant-element';
+
+
+
+
+import slide8 from './slides/08-render-as-prop';
+
 
 const slides = [
   <Slide1A />,
-  slide3
+  slide3,
+  slide8
 ];
 
 
@@ -23,15 +29,11 @@ export default class Slideshow extends React.Component {
   };
 
   render(){
-    console.log(this.state.slideIndex);
     return slides[this.state.slideIndex];
   }
 
   componentDidMount(){
     $(document.body).keydown(e => {
-
-      console.log(e);
-
       switch (e.keyCode){
         case 37:
           this.setState({

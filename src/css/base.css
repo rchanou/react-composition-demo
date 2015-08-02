@@ -1,0 +1,27 @@
+/*
+
+*/
+
+@font-face {
+  font-family: Montserrat;
+  src: url('../fonts/MontSerrat-Regular.otf');
+}
+
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-family: Montserrat;
+  background-color: hsl(0,0%,22%);
+  //color: white;
+  color: hsl(33,88%,55%);
+}
+
+* :not(style):not(script):not(title) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
