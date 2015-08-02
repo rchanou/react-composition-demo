@@ -2,18 +2,21 @@ import React from 'react';
 
 const header = <h1>ReactJS OC</h1>;
 
-const pageA = <div>
+const sectionA = <div>
   {header}
   <div>
-    This is page A.
+    This is section A.
   </div>
 </div>;
 
-const pageB = <div>
+const sectionB = <div>
   {header}
   <div>
-    This is page B.
+    This is section B.
   </div>
 </div>;
 
-export default pageB;
+export default <div style={{ height: '100%' }}>
+  {sectionA}
+  {sectionB}
+</div>;

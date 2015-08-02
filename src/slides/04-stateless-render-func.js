@@ -1,8 +1,6 @@
 import React from 'react';
 
 const renderButton =
-  (text) => <div>
+  (text, onClick) => <div>
     {text}
   </div>;
-
-export default renderButton;
