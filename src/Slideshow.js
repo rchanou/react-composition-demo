@@ -11,7 +11,7 @@ import slide3 from './slides/03-constant-element';
 
 
 import slide8 from './slides/08-render-as-prop';
-import slide10 from './slides/10-extending-children';
+import { page as slide10 } from './slides/10-extending-children';
 
 
 const slides = [

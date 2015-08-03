@@ -1,10 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
-/*
-  examples of render-as-a-prop components. for more awesome examples,
-  check out react-motion and react-radio-group by chenglou.
-*/
 
 class Hover extends React.Component {
   static propTypes = {
@@ -13,27 +7,23 @@ class Hover extends React.Component {
 
   state = { hovering: false }
 
-  _onMouseOver = () => {
-    this.setState({ hovering: true });
-  }
-
-  _onMouseOut = () => {
-    this.setState({ hovering: false });
-  }
-
   _eventHandlerProps = {
-    onMouseOver: this._onMouseOver,
-    onMouseOut: this._onMouseOut
+    onMouseOver: () => {
+      this.setState({ hovering: true });
+    },
+    onMouseOut: () => {
+      this.setState({ hovering: false });
+    }
   }
 
   render(){
     // for this component, this.props.children must be a function
     // that returns a React element
-    let me = this.props.children(this.state.hovering);
+    let element = this.props.children(this.state.hovering);
 
     // Since 'me' is a React element, it is opaque
     // and props must be added to it with React.cloneElement
-    return React.cloneElement(me, this._eventHandlerProps);
+    return React.cloneElement(element, this._eventHandlerProps);
   }
 }
 
@@ -91,6 +81,8 @@ let arrow =
     </Hover>}
   </Rotate>;
 
+// you don't have to pass render as a child. it can be a normal prop.
+// it just looks better when you compose a bunch of them this way!
 
 let page = <div style={{ width: '100%', height: '100%' }}>
   {displayHover}
@@ -98,4 +90,5 @@ let page = <div style={{ width: '100%', height: '100%' }}>
   {arrow}
 </div>;
 
+// for more awesome examples, check out react-motion and react-radio-group by chenglou.
 export default page;

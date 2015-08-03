@@ -6,14 +6,16 @@ class RainbowList extends React.Component {
   render(){
     let { Element, children, ...otherProps } = this.props;
 
+    let rainbowizeChild = (child, i) => {
+      let rainbowStyle = {
+        color: `hsl(${360 / children.length * i},50%,70%)`
+      };
+      return React.cloneElement(child, { style: rainbowStyle});
+    };
+
     let rainbowChildren = React.Children.map(
       this.props.children,
-      (child, i) => {
-        let rainbowStyle = {
-          color: `hsl(${360 / children.length * i},50%,70%)`
-        };
-        return React.cloneElement(child, { style: rainbowStyle});
-      }
+      rainbowizeChild
     );
 
     return <Element {...otherProps}>
@@ -30,11 +32,11 @@ let page = <RainbowList
     border: '10px solid pink'
   }}
 >
-  <li>Apple</li>
-  <li>Banana</li>
-  <li>Cherry</li>
+  <li>Aardvarks</li>
+  <li>Birds</li>
+  <li>Cows</li>
   <li>Doggies</li>
   <li>Elephants</li>
 </RainbowList>;
 
-export default page;
+export { page, RainbowList };

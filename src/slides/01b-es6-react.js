@@ -2,12 +2,12 @@
 import React from 'react';
 
 class MyComponent extends React.Component { // idiomatic ES6 class
-  static defaultProps = { text: 'ES2015+' };
+  static defaultProps = { text: 'ES2015+' }
   // ^ default props are just static property of class
 
 
   // state is just private property of class
-  state = { highlighted: false };
+  state = { highlighted: false }
 
 
   _onClick = e => {  // lambda; syntactic trick for auto-binding

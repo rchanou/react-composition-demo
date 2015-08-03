@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "jquery": "^2.1.4",
+    "lodash": "^3.10.0",
     "react": "0.14.0-beta1",
     "react-dom": "0.14.0-beta1",
     "react-motion": "^0.2.6",

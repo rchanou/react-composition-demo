@@ -2,9 +2,9 @@
 import React from 'react';
 
 class MyComponent extends React.Component {
-  static defaultProps = { text: 'ES2015+' };
+  static defaultProps = { text: 'ES2015+' }
 
-  state = { highlighted: false };
+  state = { highlighted: false }
 
   _onClick = e => {
     this.setState({ highlighted: !this.state.highlighted });
