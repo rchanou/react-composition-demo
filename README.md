@@ -1,7 +1,7 @@
 React Composition Demo
 ======================
 
-(based on [react-hot-boilerplate](http://github.com/gaearon/react-hot-boilerplate) by Dan Abramov)
+(based on [react-hot-boilerplate](http://github.com/gaearon/react-hot-boilerplate) by [Dan Abramov](https://twitter.com/dan_abramov?lang=en))
 
 This slideshow and demo will be/was presented by [Ronald ChanOu](http://twitter.com/ronaldchanou)
 at PeopleSpace (Irvine, CA), for the ReactJS OC Meetup group. The slideshow is itself a React
@@ -53,7 +53,9 @@ You may want to change the host in `dev.js` from `localhost` to `0.0.0.0` to all
 
 ### Resources
 
-* [Demo video](http://vimeo.com/100010922)
-* [react-hot-loader on Github](https://github.com/gaearon/react-hot-loader)
-* [Integrating JSX live reload into your workflow](http://gaearon.github.io/react-hot-loader/getstarted/)
-* Ping dan_abramov on Twitter or #reactjs IRC
+* Look up articles and videos by Dan Abramov on higher-order components and
+  hot reloading
+* [Cheng Lou](https://github.com/chenglou) uses the "child render function"
+  pattern such as in [react-motion](https://github.com/chenglou/react-motion)
+* The [react-future](https://github.com/reactjs/react-future) repo also demos some of these patterns
+* React maintainer [Sebastian Markbåge](https://twitter.com/sebmarkbage/) also has a lot to say about React composition.
