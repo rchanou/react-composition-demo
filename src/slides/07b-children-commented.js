@@ -35,6 +35,9 @@ let uglyRainbowList = <RainbowList
     <div>Yay!</div>
   ]}
 />;
+// any prop that is an element, a list of elements, or a function that returns
+// an element will probably look best as a child/children of the component
+// (see next slides for examples)
 
 // if you are writing a Component that can take more than one child, when using them,
 // you will have to map over them with React.Children.map and React.Children.forEach

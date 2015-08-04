@@ -6,6 +6,7 @@ import React from 'react';
 // let and const are like var with stricter, safer scoping
 let a = 1;
 const b = 2;
+
 ////////////////////////////////////////////////////////////////////////////////
 
 
@@ -16,6 +17,7 @@ const sum = (x, y) => x + y;
 var oldSum = function(x, y){
   return x + y;
 }.bind(this);
+
 ////////////////////////////////////////////////////////////////////////////////
 
 
@@ -24,10 +26,11 @@ const power = (num, exponent = 2) => num ^ exponent;
 
 console.log( power(5) );
 // 25
+
 ////////////////////////////////////////////////////////////////////////////////
 
 
-// the spread and rest operators let us easily split apart objects & arrays
+// spread and rest operators let us easily take apart objects & arrays
 let props = {
   firstName: 'Anna',
   lastName: 'Banana',
@@ -51,18 +54,20 @@ console.log(rest);
 let allPropsAgain = { firstName, ...rest };
 
 console.log(allPropsAgain); // same as first all
+
 ////////////////////////////////////////////////////////////////////////////////
 
 
 // template literals allow cleaner string concatenation
-//   you need to use backticks for this, NOT single quotes!
-let backgroundColor = `hsl(${50 + 60 + 70}, 70%, 70%)`; // hsl(180,70%,70%)
+// use backticks, NOT single quotes!
+let backgroundColor = `hsl(${50 + 60 + 70}, 60%, 80%)`; // hsl(180,60%,80%)
 
 // shorthand notation
 let divStyle = {
   backgroundColor, // backgroundColor: backgroundColor
   height: '100%'
 };
+
 ////////////////////////////////////////////////////////////////////////////////
 
 

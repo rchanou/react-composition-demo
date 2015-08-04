@@ -18,10 +18,9 @@ const sectionB = <div>
   </div>
 </div>;
 
-
-////////////////////////////////////////////////////////////////////////////////
-
-export default <div style={{ height: '100%' }}>
+const page = <div style={{ height: '100%' }}>
   {sectionA}
   {sectionB}
 </div>;
+
+export default page;

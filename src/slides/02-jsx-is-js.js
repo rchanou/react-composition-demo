@@ -7,6 +7,7 @@ import '../css/toggle-style.css';
 const a = <div>JSX is just JavaScript</div>;
 
 const b = React.createElement('div', null, 'JSX is just JavaScript');
+
 ////////////////////////////////////////////////////////////////////////////////
 
 
@@ -14,6 +15,7 @@ const b = React.createElement('div', null, 'JSX is just JavaScript');
 const c = <Toggle defaultChecked={true} />;
 
 const d = React.createElement(Toggle, { defaultChecked: true });
+
 ////////////////////////////////////////////////////////////////////////////////
 
 
@@ -30,7 +32,18 @@ const f =
     React.createElement(Toggle, { defaultChecked: false }),
     React.createElement(Toggle, { defaultChecked: true })
   );
+
 ////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
 
 const rowStyle = { flexDirection: 'row', width: '80%' };
 

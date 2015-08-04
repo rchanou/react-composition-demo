@@ -1,7 +1,10 @@
+/* SKIPPING THIS
 import React from 'react';
 
 import Toggle from 'react-toggle';
 import '../css/toggle-style.css';
+
+
 
 
 const header = <h1>

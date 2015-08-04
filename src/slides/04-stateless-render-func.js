@@ -7,6 +7,11 @@ import React from 'react';
 
   React 0.14 can shallowly compare old and new props, giving you a free
   shouldComponentUpdate optimization in many cases.
+
+  When should a Component have state? Depends, but one rule of thumb I use: if the triggering events start with the
+  component and only affect what's within the component, it can be state. The classic case is the hovering tooltip.
+  On the opposite end is data pulled from a database, which is best kept in a normalized external store and passed down
+  as props.
 */
 
 
@@ -24,7 +29,5 @@ const page = <div style={{ height: '100%' }}>
   {renderButton('A Button that Does Something', handler)}
 </div>;
 
-
-////////////////////////////////////////////////////////////////////////////////
 
 export default page;

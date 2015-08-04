@@ -1,7 +1,7 @@
 import React from 'react';
 import Toggle from 'react-toggle';
 import '../css/toggle-style.css';
-import { RainbowList } from './10-extending-children';
+import { RainbowList } from './08-extending-children';
 
 // children is just a prop with some special behavior.
 

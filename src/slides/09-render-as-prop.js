@@ -1,10 +1,6 @@
 import React from 'react';
 
 class Hover extends React.Component {
-  static propTypes = {
-    children: React.PropTypes.func.isRequired
-  }
-
   state = { hovering: false }
 
   _eventHandlerProps = {
@@ -26,6 +22,7 @@ class Hover extends React.Component {
     return React.cloneElement(element, this._eventHandlerProps);
   }
 }
+
 ////////////////////////////////////////////////////////////////////////////////
 
 
@@ -54,20 +51,23 @@ class Rotate extends React.Component {
     clearInterval(this._rotateInterval);
   }
 }
+
 ////////////////////////////////////////////////////////////////////////////////
 
 
-let displayHover = <Hover>
+let hoverText = <Hover>
   {hovering => <div>
     {hovering? 'Hovering': 'Not Hovering'}
   </div>}
 </Hover>;
 
-let displayRotate = <Rotate interval={50}>
+
+let rotateNumber = <Rotate interval={50}>
   {val => <div>{val}</div>}
 </Rotate>;
 
-let arrow =
+
+let crazyArrow =
   <Rotate interval={30}>
     {angle => <Hover>
       {hovering => <div
@@ -81,15 +81,19 @@ let arrow =
       />}
     </Hover>}
   </Rotate>;
+
+
+////////////////////////////////////////////////////////////////////////////////
 // you don't have to pass render as a child. it can be a normal prop.
 // it just looks better when you compose a bunch of them this way!
-////////////////////////////////////////////////////////////////////////////////
+// for more awesome examples, check out react-motion and react-radio-group
+// by @chenglou.
+
 
 let page = <div style={{ width: '100%', height: '100%' }}>
-  {displayHover}
-  {displayRotate}
-  {arrow}
+  {hoverText}
+  {rotateNumber}
+  {crazyArrow}
 </div>;
 
-// for more awesome examples, check out react-motion and react-radio-group by chenglou.
 export default page;
