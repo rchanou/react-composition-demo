@@ -5,15 +5,16 @@ import React from 'react';
 
 // let and const are like var with stricter, safer scoping
 
+const nums = [];
 for (let i = 0; i < 9; i++){
   setTimeout(() => {
-    console.log(i); // if we used var, it would print all 9s
+    nums.push(i); // if we used var, they would all be 9's
   }, 1000);
 }
 
-const b = { foo: 'boo' };
+const obj = { foo: 'boo' };
 //const b = 'nope'; // if uncommented, will cause build error!
-b.foo = 'You can still change properties of const objects.';
+obj.foo = 'You can still change properties of const objects.';
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -30,10 +31,10 @@ const oldSum = function(x, y){
 
 
 // functions can have default parameters
-const power = (num, exponent = 2) => num ^ exponent;
+const sumThree = (x = 0, y = 0, z = 0) => x + y + z;
 
-console.log( power(5) );
-// 25
+const sumThreeExample = sumThree(3, 5); // would be NaN without default z
+// 8
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -47,27 +48,34 @@ const props = {
 };
 
 const { firstName, ...rest } = props;
-
-console.log(firstName);
-//  Anna
-
-console.log(rest);
-/*  {
+/*  const firstName = 'Anna';
+    const rest = {
       lastName: 'Banana',
       age: 42,
       location: 'Orange County'
-    }
+    };
 */
 
-const allPropsAgain = { firstName, ...rest };
+const allPropsAgain = { firstName, ...rest }; // same as first all
 
-console.log(allPropsAgain); // same as first all
+
+// can use spread/rest destructuring for variadic functions
+
+const someNums = [2, 5, 7, 10];
+const allNums = [...someNums, 3, 6, 8];
+// allNums is:  [2, 5, 7, 10, 3, 6, 8]
+
+const sumAll = (...all) => all.reduce( (sum, x) => sum + x );
+
+const sumOfAllAndMore = sumAll(...allNums, 1, 4, 9);
+// above becomes...     sumAll(2, 5, 7, 10, 3, 6, 8, 1, 4, 9)
+
 
 ////////////////////////////////////////////////////////////////////////////////
 
 
 // template literals allow cleaner string concatenation
-// use backticks, NOT single quotes!
+// use backticks, NOT single quotes
 const backgroundColor = `hsl(${50 + 60 + 70}, 60%, 80%)`; // hsl(180,60%,80%)
 
 // shorthand notation
@@ -76,11 +84,17 @@ const divStyle = {
   height: '100%'
 };
 
+
 ////////////////////////////////////////////////////////////////////////////////
 
 
 export default <ul style={{ ...divStyle, width: '100%' }}>
-  <li>{firstName}</li>
-  <li>{rest}</li>
-  <li>{allPropsAgain}</li>
+  <li style={{ flexDirection: 'row' }}>{nums}</li>
+  <li>{obj}</li>
+  <li>{`Sum x+y+z: ${sumThreeExample}`}</li>
+  <li>{`All nums: ${allNums}`}</li>
+  <li>{`Sum of all & more: ${sumOfAllAndMore}`}</li>
+  <li>First Name: {firstName}</li>
+  <li>Other: {rest}</li>
+  <li>All: {allPropsAgain}</li>
 </ul>;

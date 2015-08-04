@@ -8,10 +8,10 @@ export default <div
   }}
 >
   <h1>
-    Building with Webpack and Component Composition
+    Building with Webpack & Component Composition
   </h1>
   <div>
-    By Ronny ChanOu, Front End Developer at Club Speed
+    By Ronny ChanOu, Front End Developer @ Club Speed
   </div>
   <div>
     Twitter: @ronaldchanou
