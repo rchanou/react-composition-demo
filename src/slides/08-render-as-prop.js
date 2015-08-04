@@ -26,6 +26,8 @@ class Hover extends React.Component {
     return React.cloneElement(element, this._eventHandlerProps);
   }
 }
+////////////////////////////////////////////////////////////////////////////////
+
 
 class Rotate extends React.Component {
   state = { value: 0 }
@@ -52,6 +54,7 @@ class Rotate extends React.Component {
     clearInterval(this._rotateInterval);
   }
 }
+////////////////////////////////////////////////////////////////////////////////
 
 
 let displayHover = <Hover>
@@ -60,11 +63,9 @@ let displayHover = <Hover>
   </div>}
 </Hover>;
 
-
 let displayRotate = <Rotate interval={50}>
   {val => <div>{val}</div>}
 </Rotate>;
-
 
 let arrow =
   <Rotate interval={30}>
@@ -80,9 +81,9 @@ let arrow =
       />}
     </Hover>}
   </Rotate>;
-
 // you don't have to pass render as a child. it can be a normal prop.
 // it just looks better when you compose a bunch of them this way!
+////////////////////////////////////////////////////////////////////////////////
 
 let page = <div style={{ width: '100%', height: '100%' }}>
   {displayHover}

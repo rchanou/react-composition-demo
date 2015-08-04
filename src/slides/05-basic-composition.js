@@ -20,3 +20,7 @@ class ComposedComponent extends React.Component {
 }
 
 export default ComposedComponent;
+
+/*
+
+*/

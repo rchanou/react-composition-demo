@@ -1,13 +1,33 @@
 import React from 'react';
 
-//// More ES6 features that work well with React
+// More ES6 features that work well with React
 
-//// let and const are like var with stricter, safer scoping
+
+// let and const are like var with stricter, safer scoping
 let a = 1;
 const b = 2;
+////////////////////////////////////////////////////////////////////////////////
 
 
-//// the spread and rest operators let us easily split apart objects & arrays
+// fat arrow shorthand for one-line functions
+const sum = (x, y) => x + y;
+
+// same as...
+var oldSum = function(x, y){
+  return x + y;
+}.bind(this);
+////////////////////////////////////////////////////////////////////////////////
+
+
+// functions can have default parameters
+const power = (num, exponent = 2) => num ^ exponent;
+
+console.log( power(5) );
+// 25
+////////////////////////////////////////////////////////////////////////////////
+
+
+// the spread and rest operators let us easily split apart objects & arrays
 let props = {
   firstName: 'Anna',
   lastName: 'Banana',
@@ -31,21 +51,22 @@ console.log(rest);
 let allPropsAgain = { firstName, ...rest };
 
 console.log(allPropsAgain); // same as first all
+////////////////////////////////////////////////////////////////////////////////
 
 
-//// template literals allow cleaner string concatenation
+// template literals allow cleaner string concatenation
 //   you need to use backticks for this, NOT single quotes!
-
-// same as hsl(90,70%,70%)
-let backgroundColor = `hsl(${20 + 30 + 40}, 70%, 70%)`;
+let backgroundColor = `hsl(${50 + 60 + 70}, 70%, 70%)`; // hsl(180,70%,70%)
 
 // shorthand notation
 let divStyle = {
-  backgroundColor,
+  backgroundColor, // backgroundColor: backgroundColor
+  height: '100%'
 };
+////////////////////////////////////////////////////////////////////////////////
 
 
-export default <ul style={{ ...divStyle, height: '100%' }}>
+export default <ul style={{ ...divStyle, width: '100%' }}>
   <li>{firstName}</li>
   <li>{rest}</li>
   <li>{allPropsAgain}</li>

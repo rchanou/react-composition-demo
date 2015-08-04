@@ -9,23 +9,26 @@ import './css/base.css';
 import ES5Component from './slides/01a-es5-react';
 import ES6Component from './slides/01b-es6-react';
 import slide1d from './slides/01d-more-es6';
+import slide2 from './slides/02-jsx-is-js';
 import slide3 from './slides/03-constant-element';
-
-
-
+import slide4 from './slides/04-stateless-render-func';
+import slide7a from './slides/07a-children-uncommented';
 import slide8 from './slides/08-render-as-prop';
 import { page as slide10 } from './slides/10-extending-children';
 
 
 const slide1 = <div style={{ height: '100%' }}>
-  <ES5Component />
+  <ES5Component>lolwut</ES5Component>
   <ES6Component />
 </div>
 
 const slides = [
   slide1,
   slide1d,
+  slide2,
   slide3,
+  slide4,
+  slide7a,
   slide8,
   slide10
 ];

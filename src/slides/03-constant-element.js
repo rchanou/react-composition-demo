@@ -1,6 +1,6 @@
 import React from 'react';
 
-//// simple constant element reuse
+// Simple constant element reuse. React 0.14 optimizes for this.
 
 const header = <h1>ReactJS OC</h1>;
 
@@ -17,6 +17,9 @@ const sectionB = <div>
     This is section B.
   </div>
 </div>;
+
+
+////////////////////////////////////////////////////////////////////////////////
 
 export default <div style={{ height: '100%' }}>
   {sectionA}

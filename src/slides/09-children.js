@@ -12,8 +12,8 @@ let html = <ul>
 </ul>;
 
 // most React Components you use will probably be childless.
-// you can give them children, but if they weren't programmed to do anything with it,
-// they will be ignored like any other unused prop.
+// you can give them children, but if they weren't programmed to do anything
+// with it, they will be ignored like any other unused prop.
 let boringChildlessComponent = <Toggle defaultChecked={true} />;
 
 let neglectedChildren = <Toggle>
