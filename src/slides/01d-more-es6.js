@@ -92,9 +92,9 @@ export default <ul style={{ ...divStyle, width: '100%' }}>
   <li style={{ flexDirection: 'row' }}>{nums}</li>
   <li>{obj}</li>
   <li>{`Sum x+y+z: ${sumThreeExample}`}</li>
-  <li>{`All nums: ${allNums}`}</li>
-  <li>{`Sum of all & more: ${sumOfAllAndMore}`}</li>
   <li>First Name: {firstName}</li>
   <li>Other: {rest}</li>
   <li>All: {allPropsAgain}</li>
+  <li>{`All nums: ${allNums}`}</li>
+  <li>{`Sum of all & more: ${sumOfAllAndMore}`}</li>
 </ul>;

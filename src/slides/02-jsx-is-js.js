@@ -3,6 +3,9 @@ import Toggle from 'react-toggle';
 import '../css/toggle-style.css';
 
 
+// JSX is just a way of writing React JavaScript
+// that looks like HTML
+
 // if tag is lowercase, it is assumed to be standard html
 // and is passed to createElement as a string
 const a = <div>JSX is just JavaScript</div>;
