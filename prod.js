@@ -1,9 +1,11 @@
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 /*
   this is the transpilation script for deploying to production.
+  note that it extracts css intoa separate bundle.
   first, it creates a build folder if necessary.
   then, it copies the index.html file in root to the build folder.
   it then transpiles the src files and outputs the resulting files
@@ -32,6 +34,7 @@ var config = {
     }),
     // minification plugin
     new webpack.optimize.UglifyJsPlugin(),
+    new ExtractTextPlugin('bundle.css'), // put css in separate bundle
     new webpack.NoErrorsPlugin()
   ],
 
@@ -48,7 +51,10 @@ var config = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader',
+        // loader for extracting css into bundle.css
+        loader: ExtractTextPlugin.extract(
+          'style-loader', 'css-loader'
+        ),
         include: path.join(__dirname, 'src')
       },
       {
@@ -59,6 +65,7 @@ var config = {
     ]
   }
 };
+
 
 var compiler = webpack(config);
 
