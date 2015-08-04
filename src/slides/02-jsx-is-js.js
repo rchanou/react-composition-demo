@@ -3,7 +3,8 @@ import Toggle from 'react-toggle';
 import '../css/toggle-style.css';
 
 
-// these are the same
+// if tag is lowercase, it is assumed to be standard html
+// and is passed to createElement as a string
 const a = <div>JSX is just JavaScript</div>;
 
 const b = React.createElement('div', null, 'JSX is just JavaScript');
@@ -11,7 +12,8 @@ const b = React.createElement('div', null, 'JSX is just JavaScript');
 ////////////////////////////////////////////////////////////////////////////////
 
 
-// these are the same
+// if tag is uppercase, it is assumed to be a Component class
+// and is passed to createElement as itself
 const c = <Toggle defaultChecked={true} />;
 
 const d = React.createElement(Toggle, { defaultChecked: true });
@@ -33,17 +35,8 @@ const f =
     React.createElement(Toggle, { defaultChecked: true })
   );
 
+
 ////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
 
 const rowStyle = { flexDirection: 'row', width: '80%' };
 

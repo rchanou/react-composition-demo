@@ -13,9 +13,9 @@ import slide1d from './slides/01d-more-es6';
 import slide2 from './slides/02-jsx-is-js';
 import slide3 from './slides/03-constant-element';
 import slide4 from './slides/04-stateless-render-func';
+import slide5 from './slides/05-children';
 import { page as slide6 } from './slides/06-components-as-props';
 import slide7 from './slides/07-higher-order-components';
-import slide7a from './slides/07a-children';
 import slide9 from './slides/09-render-as-prop';
 import { page as slide8 } from './slides/08-extending-children';
 
@@ -32,9 +32,9 @@ const slides = [
   slide2,
   slide3,
   slide4,
+  slide5,
   slide6,
   slide7,
-  slide7a,
   slide8,
   slide9
 ];

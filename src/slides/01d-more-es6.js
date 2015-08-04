@@ -1,6 +1,7 @@
 import React from 'react';
 
-// More ES6 features that work well with React
+
+//// More ES6 features that work well with React
 
 // let and const are like var with stricter, safer scoping
 

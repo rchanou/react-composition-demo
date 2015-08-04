@@ -26,5 +26,6 @@ export default MyComponent;
   The main benefit of using ES6 classes is simply that it is more idiomatic,
   improving compatibility with third party tools and libraries.
 
-  Do not use inheritance on React Component Classes! Use functional composition!
+  Do not use inheritance on React Component Classes unless you REALLY REALLY
+  know what you're doing. Use functional composition instead!
 */

@@ -1,53 +1,48 @@
 import React from 'react';
-import Toggle from 'react-toggle';
-import '../css/toggle-style.css';
 
 
-class TrippyComponent extends React.Component {
-  state = { hue: 0 }
+// component types can be passed as a prop like anything else
 
+class Flex extends React.Component {
   render(){
-    let { Tag, style, ...otherProps } = this.props;
-    let newStyle = {};
+    let { tag, style, children, ...otherProps } = this.props;
+
+    let newStyle = {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-around'
+    };
+
     for (let key in style){
       newStyle[key] = style[key];
     }
-    newStyle.backgroundColor = `hsl(${this.state.hue},50%,50%)`;
-    return React.cloneElement(
-      <Tag {...otherProps} />,
-      { style: newStyle }
-    );
-  }
 
-  componentDidMount(){
-    this.interval = setInterval(() => {
-      if (this.state.hue === 359){
-        this.setState({ hue: 0 });
-      } else {
-        this.setState({ hue: this.state.hue + 1 });
-      }
-    }, 30);
-  }
+    let Tag = tag;
 
-  componentWillUnmount(){
-    clearInterval(this.interval);
+    return <Tag {...otherProps} style={newStyle}>
+      {children}
+    </Tag>;
   }
 }
 
 
-const trippyDiv = <TrippyComponent Tag='div'
-  style={{ width: 50, height: 50 }}
-/>;
+const flexDiv = <Flex tag='div' style={{ width: '100%', color: 'steelblue' }}>
+  <div>yo</div>
+  <div>yo</div>
+  <div>yo</div>
+</Flex>;
 
-const trippyInput = <TrippyComponent Tag='input' />;
+const flexInput = <Flex tag='form'>
+  <label>A:</label><input />
+  <label>B:</label><input />
+</Flex>;
 
-const trippyToggle = <TrippyComponent Tag={Toggle} defaultChecked={true} />;
 
-const page = <div style={{ height: '100%' }}>
-  {trippyDiv}
-  {trippyInput}
-  {trippyToggle}
+////////////////////////////////////////////////////////////////////////////////
+
+const page = <div style={{ width: '100%', height: '100%' }}>
+  {flexDiv}
+  {flexInput}
 </div>;
 
-
-export default { TrippyComponent, page };
+export default { Flex, page };
