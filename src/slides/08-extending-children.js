@@ -11,7 +11,7 @@ class RainbowList extends React.Component {
       children,
       (child, i) => {
         let rainbowStyle = {
-          color: `hsl(${360 / children.length * i},50%,70%)`
+          color: `hsl(${360 / children.length * i},50%,60%)`
         };
         return React.cloneElement(child, { style: rainbowStyle });
       }

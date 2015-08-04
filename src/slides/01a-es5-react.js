@@ -10,6 +10,10 @@ var ES5Component = React.createClass({
     return { highlighted: false };
   },
 
+  _onClick: function(e){
+    this.setState({ highlighted: !this.state.highlighted });
+  },
+
   render: function(){
     return <div
       style={{ backgroundColor: this.state.highlighted && 'aquamarine' }}
@@ -17,10 +21,6 @@ var ES5Component = React.createClass({
     >
       {this.props.text}
     </div>;
-  },
-
-  _onClick: function(e){
-    this.setState({ highlighted: !this.state.highlighted });
   }
 });
 
