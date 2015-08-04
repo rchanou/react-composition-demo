@@ -1,7 +1,8 @@
 import React from 'react';
 
+
 class RainbowList extends React.Component {
-  static defaultProps = { Tag: 'div' };
+  static defaultProps = { Tag: 'div' }
 
   render(){
     let { Tag, children, ...otherProps } = this.props;
@@ -22,19 +23,24 @@ class RainbowList extends React.Component {
   }
 }
 
-let page = <RainbowList
-  Tag='ul'
-  style={{
-    width: '100%',
-    height: '100%',
-    border: '10px solid pink'
-  }}
->
-  <li>Aardvarks</li>
-  <li>Birds</li>
-  <li>Cows</li>
-  <li>Doggies</li>
-  <li>Elephants</li>
-</RainbowList>;
+
+const page =
+  <RainbowList
+    Tag='ul'
+    style={{
+      width: '100%',
+      height: '100%',
+      border: '10px solid pink'
+    }}
+  >
+    <li>Aardvarks</li>
+    <li>Birds</li>
+    <li>Cows</li>
+    <li>Doggies</li>
+    <li>Elephants</li>
+  </RainbowList>;
+
+
+////////////////////////////////////////////////////////////////////////////////
 
 export { page, RainbowList };

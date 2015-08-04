@@ -86,8 +86,7 @@ let crazyArrow =
 ////////////////////////////////////////////////////////////////////////////////
 // you don't have to pass render as a child. it can be a normal prop.
 // it just looks better when you compose a bunch of them this way!
-// for more awesome examples, check out react-motion and react-radio-group
-// by @chenglou.
+// for more examples, check out react-motion and react-radio-group by @chenglou.
 
 
 let page = <div style={{ width: '100%', height: '100%' }}>

@@ -3,8 +3,7 @@ import Toggle from 'react-toggle';
 import '../css/toggle-style.css';
 import { RainbowList } from './08-extending-children';
 
-// children is just a prop with some special behavior.
-
+// children is just a prop with some special behaviors.
 
 let vanillaHtml = <ul>
   <li>Inner Child A</li>
@@ -49,6 +48,7 @@ let uglyRainbowList = <RainbowList
 
 
 ////////////////////////////////////////////////////////////////////////////////
+
 export default <div style={{ height: '100%' }}>
   {boringChildlessComponent}
   {neglectfulParent}

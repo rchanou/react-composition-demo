@@ -2,6 +2,7 @@ import React from 'react';
 import Toggle from 'react-toggle';
 import '../css/toggle-style.css';
 
+
 class TrippyComponent extends React.Component {
   state = { hue: 0 }
 
@@ -32,6 +33,7 @@ class TrippyComponent extends React.Component {
     clearInterval(this.interval);
   }
 }
+
 
 const trippyDiv = <TrippyComponent Tag='div'
   style={{ width: 50, height: 50 }}

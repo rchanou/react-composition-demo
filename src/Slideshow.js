@@ -72,3 +72,5 @@ export default class Slideshow extends React.Component {
     });
   }
 }
+
+console.log('child test', React.Children.toArray);

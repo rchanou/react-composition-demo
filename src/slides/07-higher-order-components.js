@@ -9,24 +9,24 @@ function makeLogged(Component){
       return <Component {...this.props} />;
     }
     componentWillMount(){
-      console.log('will mount');
+      console.log('will mount', this.props);
     }
     componentDidMount(){
-      console.log('did mount');
+      console.log('did mount', this.props);
     }
     componentWillUnmount(){
-      console.log('will unmount');
+      console.log('will unmount', this.props);
     }
   }
 }
 
 
-let LoggedToggle = makeLogged(Toggle);
+const LoggedToggle = makeLogged(Toggle);
 
 
 const page = <div style={{ height: '20%' }}>
   This is a higher-order logged Toggle component.
-  <LoggedToggle defaultChecked={true} />
+  <LoggedToggle defaultChecked={Math.random() < 0.5} />
 </div>;
 
 

@@ -11,7 +11,7 @@ export default <div
     Building with Webpack and Component Composition
   </h1>
   <div>
-    A Presentation by Ronny ChanOu for ReactJS OC
+    By Ronny ChanOu, Front End Developer at Club Speed
   </div>
   <div>
     Twitter: @ronaldchanou
