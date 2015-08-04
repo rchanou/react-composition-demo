@@ -1,3 +1,5 @@
+import React from 'react';
+
 //// More ES6 features that work well with React
 
 //// let and const are like var with stricter, safer scoping
@@ -34,4 +36,17 @@ console.log(allPropsAgain); // same as first all
 //// template literals allow cleaner string concatenation
 //   you need to use backticks for this, NOT single quotes!
 
-let color = `hsl(${10 + 20 + 30}, 50%, 50%)`; // same as hsl(60,50%,50%)
+// same as hsl(90,70%,70%)
+let backgroundColor = `hsl(${20 + 30 + 40}, 70%, 70%)`;
+
+// shorthand notation
+let divStyle = {
+  backgroundColor,
+};
+
+
+export default <ul style={{ ...divStyle, height: '100%' }}>
+  <li>{firstName}</li>
+  <li>{rest}</li>
+  <li>{allPropsAgain}</li>
+</ul>;

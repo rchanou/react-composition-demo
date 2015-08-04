@@ -5,7 +5,7 @@ React Composition Demo
 
 This slideshow and demo will be/was presented by [Ronald ChanOu](http://twitter.com/ronaldchanou)
 at PeopleSpace (Irvine, CA), for the ReactJS OC Meetup group. The slideshow is itself a React
-component built using the techniques in the talk.
+component built using the techniques in the talk. Build it, browse to it, and use the left and right arrows to scroll through the slides.
 
 ### Goals
 

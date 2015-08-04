@@ -3,7 +3,7 @@ var React = require('react');
 
 var ES5Component = React.createClass({
   getDefaultProps: function(){
-    return { text: 'ES5' };
+    return { text: `I'm an ES5 component.` };
   },
 
   getInitialState: function(){

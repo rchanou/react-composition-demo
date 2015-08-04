@@ -2,7 +2,7 @@
 import React from 'react';
 
 class ES6Component extends React.Component { // idiomatic ES6 class
-  static defaultProps = { text: 'ES2015+' }
+  static defaultProps = { text: `I'm an ES6+ component` }
   // ^ default props are just static property of class
 
 
