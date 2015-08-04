@@ -36,21 +36,19 @@ const flexDiv =
       justifyContent: 'space-around'
     }}
   >
-    <div>yo</div>
-    <div>yo</div>
-    <div>yo</div>
+    <div>This</div>
+    <div>is</div>
+    <div>Flexbox</div>
   </Flex>;
 
 
-//const labelStyle = { justifyContent: };
-
-const flexInput = <Flex tag='form' action='' method='post'>
+const flexForm = <Flex tag='form' action='' method='post'>
   <Flex tag='fieldset'>
     <legend>Form</legend>
 
     <Flex>
       <label>Amount:</label>
-      <input type='number' />      
+      <input type='number' />
     </Flex>
 
     <Flex>
@@ -67,7 +65,7 @@ const flexInput = <Flex tag='form' action='' method='post'>
 
 const page = <div style={{ width: '100%', height: '100%' }}>
   {flexDiv}
-  {flexInput}
+  {flexForm}
 </div>;
 
 export default { Flex, page };

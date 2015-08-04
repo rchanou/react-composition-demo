@@ -5,17 +5,17 @@ import { RainbowList } from './08-extending-children';
 
 // children is just a prop with some special behaviors.
 
-let vanillaHtml = <ul>
+const vanillaHtml = <ul>
   <li>Inner Child A</li>
   <li>Inner Child B</li>
   <li>Inner Child C</li>
 </ul>;
 
 
-let boringChildlessComponent = <Toggle defaultChecked={true} />;
+const boringChildlessComponent = <Toggle defaultChecked={true} />;
 
 
-let neglectfulParent = <Toggle>
+const neglectfulParent = <Toggle>
   <div>
     We cause unintented effects.
   </div>
@@ -25,7 +25,7 @@ let neglectfulParent = <Toggle>
 </Toggle>;
 
 
-let rainbowList = <RainbowList>
+const rainbowList = <RainbowList>
   <div>
     Our parent uses us!
   </div>
@@ -35,7 +35,7 @@ let rainbowList = <RainbowList>
 </RainbowList>;
 
 
-let uglyRainbowList = <RainbowList
+const uglyRainbowList = <RainbowList
   children={[
     <div>
       Our parent uses us!
