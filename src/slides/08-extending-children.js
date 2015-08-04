@@ -1,6 +1,8 @@
 import React from 'react';
 
 
+// this component uses and extends this.props.children
+
 class RainbowList extends React.Component {
   static defaultProps = { Tag: 'div' }
 
