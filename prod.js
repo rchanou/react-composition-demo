@@ -11,15 +11,11 @@ var path = require('path');
 */
 
 
-// create a config object containing various webpack options
 var config = {
-  // your app entry point(s).
-  // starting with these files/modules,
-  // webpack builds your program's dependency graph.
+  // don't need hot reloading, so only entry point is app itself
   entry: [
     path.join(__dirname, 'src', 'index')
   ],
-
 
   output: {
     path: path.join(__dirname, 'build'),
@@ -27,23 +23,22 @@ var config = {
     publicPath: '/'
   },
 
-
   plugins: [
+    // builds production version of React for performance
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify("production")
       }
     }),
+    // minification plugin
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.NoErrorsPlugin()
   ],
-
 
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
 
-  //
   module: {
     loaders: [
       {
@@ -65,7 +60,6 @@ var config = {
   }
 };
 
-// create a webpack compiler based on your config
 var compiler = webpack(config);
 
 console.log('Starting file-watching and build process. Press Ctrl+C to exit.');

@@ -1,5 +1,7 @@
 import React from 'react';
 
+//// simple constant element reuse
+
 const header = <h1>ReactJS OC</h1>;
 
 const sectionA = <div>

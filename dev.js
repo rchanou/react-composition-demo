@@ -9,6 +9,10 @@ var path = require('path');
   this allows hot reloading of components.
   only changes to files that export react components will be hot-reloaded.
   the browser console will print when changes are hot-loaded, or if not, why.
+
+  Two good, simple webpack examples to check out:
+  https://github.com/petehunt/webpack-howto
+  https://github.com/gaearon/react-hot-boilerplate
 */
 
 // create a config object containing various webpack options
@@ -25,25 +29,24 @@ var config = {
     path.join(__dirname, 'src', 'index')//'./src/index'
   ],
 
-
+  // where the transpilation result will be placed
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/'  // path from view of JS/HTML page
   },
 
-
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.HotModuleReplacementPlugin(), // allows hot reloading
+    new webpack.NoErrorsPlugin() // won't build if there are syntax errors
   ],
 
-
+  // if an imported file does not have an extension, webpack will try these
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
 
-  //
+  // loader configs that determine what files webpack can include and how
   module: {
     loaders: [
       {
@@ -73,8 +76,8 @@ var compiler = webpack(config);
 new WebpackDevServer(
   compiler,
   {
-    hot: true,
-    historyApiFallback: true
+    hot: true, // hot reloading
+    historyApiFallback: true // i'm actually not sure what this does
   }
 )
 .listen(3000, 'localhost', function (err, result) {

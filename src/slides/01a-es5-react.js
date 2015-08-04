@@ -1,7 +1,7 @@
 // Component code without Babel
 var React = require('react');
 
-var MyComponent = React.createClass({
+var ES5Component = React.createClass({
   getDefaultProps: function(){
     return { text: 'ES5' };
   },
@@ -24,4 +24,4 @@ var MyComponent = React.createClass({
   }
 });
 
-module.exports = MyComponent;
+module.exports = ES5Component;
