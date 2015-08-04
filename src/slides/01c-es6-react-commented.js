@@ -1,8 +1,8 @@
 // Component code to be transpiled with Babel
 import React from 'react';
 
-class MyComponent extends React.Component {
-  static defaultProps = { text: 'ES2015+' }
+class ES6Component extends React.Component {
+  static defaultProps = { text: 'ES6S+' }
 
   state = { highlighted: false }
 
@@ -20,7 +20,7 @@ class MyComponent extends React.Component {
   }
 }
 
-export default MyComponent;
+export default ES6Component;
 
 /*
   The main benefit of using ES6 classes is simply that it is more idiomatic,

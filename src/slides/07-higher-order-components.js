@@ -3,6 +3,10 @@ import Toggle from 'react-toggle';
 import '../css/toggle-style.css';
 
 
+// higher order components
+// classes can be passed as parameters and returned like objects
+
+
 function makeLogged(Component){
   return class extends React.Component {
     render(){
