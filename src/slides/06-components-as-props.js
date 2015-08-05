@@ -7,7 +7,7 @@ class Flex extends React.Component {
   static defaultProps = { tag: 'div' }
 
   render(){
-    let { tag, style, children, ...otherProps } = this.props;
+    let { tag, style, ...otherProps } = this.props;
 
     let newStyle = {
       display: 'flex',
@@ -21,9 +21,7 @@ class Flex extends React.Component {
 
     let Tag = tag;
 
-    return <Tag {...otherProps} style={newStyle}>
-      {children}
-    </Tag>;
+    return <Tag {...otherProps} style={newStyle} />;
   }
 }
 

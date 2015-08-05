@@ -32,7 +32,8 @@ const LoggedToggle = makeLogged(Toggle);
 
 
 const page = <div style={{ height: '20%' }}>
-  This is a higher-order logged Toggle component.
+  This is a higher-order logged Toggle component. It will print to the console
+  when it mounts and unmounts.
   <LoggedToggle defaultChecked={Math.random() < 0.5} />
 </div>;
 
