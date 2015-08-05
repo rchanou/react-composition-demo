@@ -15,7 +15,7 @@ const b = React.createElement('div', null, 'JSX is just JavaScript');
 ////////////////////////////////////////////////////////////////////////////////
 
 
-// if tag is uppercase, it is assumed to be a Component class
+// if tag is uppercase, it is assumed to be a variable
 // and is passed to createElement as itself
 const c = <Toggle defaultChecked={true} />;
 
