@@ -12,12 +12,15 @@ function makeLogged(Component){
     render(){
       return <Component {...this.props} />;
     }
+
     componentWillMount(){
       console.log('will mount', this.props);
     }
+
     componentDidMount(){
       console.log('did mount', this.props);
     }
+
     componentWillUnmount(){
       console.log('will unmount', this.props);
     }

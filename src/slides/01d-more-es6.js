@@ -8,13 +8,13 @@ import React from 'react';
 const nums = [];
 for (let i = 0; i < 9; i++){
   setTimeout(() => {
-    nums.push(i); // if we used var, they would all be 9's
+    nums.push(i); // if we used var, nums would be all 9's
   }, 1000);
 }
 
 const obj = { foo: 'boo' };
-//const b = 'nope'; // if uncommented, will cause build error!
-obj.foo = 'You can still change properties of const objects.';
+// obj = 'nope'; // if uncommented, will cause build error!
+obj.foo = 'Gotcha with const objects: You can still change their properties.';
 
 ////////////////////////////////////////////////////////////////////////////////
 

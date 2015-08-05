@@ -31,9 +31,8 @@ var config = {
       "process.env": {
         NODE_ENV: JSON.stringify("production")
       }
-    }),
-    // minification plugin
-    new webpack.optimize.UglifyJsPlugin(),
+    }),    
+    new webpack.optimize.UglifyJsPlugin(), // minification plugin
     new ExtractTextPlugin('bundle.css'), // put css in separate bundle
     new webpack.NoErrorsPlugin()
   ],

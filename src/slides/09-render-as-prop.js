@@ -4,7 +4,7 @@ class Hover extends React.Component {
   state = { hovering: false }
 
   _eventHandlerProps = {
-    onMouseOver: () => {
+    onMouseOver: () => { // notice arrow, not "onMouseOver(){", to bind this
       this.setState({ hovering: true });
     },
     onMouseOut: () => {
@@ -17,8 +17,8 @@ class Hover extends React.Component {
     // that returns a React element
     let element = this.props.children(this.state.hovering);
 
-    // Since 'me' is a React element, it is opaque
-    // and props must be added to it with React.cloneElement
+    // Since 'element' is a created React element (e.g. <div />),
+    // props must be added to it with React.cloneElement
     return React.cloneElement(element, this._eventHandlerProps);
   }
 }
@@ -28,12 +28,6 @@ class Hover extends React.Component {
 
 class Rotate extends React.Component {
   state = { value: 0 }
-
-  _rotate = () => {
-    this.setState({
-      value: (this.state.value === 359)? 0: (this.state.value + 1)
-    });
-  }
 
   render(){
     return this.props.children(this.state.value);
@@ -55,19 +49,21 @@ class Rotate extends React.Component {
 ////////////////////////////////////////////////////////////////////////////////
 
 
-let hoverText = <Hover>
-  {hovering => <div>
-    {hovering? 'Hovering': 'Not Hovering'}
-  </div>}
-</Hover>;
+const hoverText =
+  <Hover>
+    {hovering => <div>
+      {hovering? 'Hovering': 'Not Hovering'}
+    </div>}
+  </Hover>;
 
 
-let rotateNumber = <Rotate interval={50}>
-  {val => <div>{val}</div>}
-</Rotate>;
+const rotateNumber =
+  <Rotate interval={50}>
+    {val => <div>{val}</div>}
+  </Rotate>;
 
 
-let crazyArrow =
+const crazyArrow =
   <Rotate interval={30}>
     {angle => <Hover>
       {hovering => <div
@@ -85,11 +81,11 @@ let crazyArrow =
 
 ////////////////////////////////////////////////////////////////////////////////
 // you don't have to pass render as a child. it can be a normal prop.
-// it just looks better when you compose a bunch of them this way!
+// it just looks better when you compose a bunch of them this way.
 // for more examples, check out react-motion and react-radio-group by @chenglou.
 
 
-let page = <div style={{ width: '100%', height: '100%' }}>
+const page = <div style={{ width: '100%', height: '100%' }}>
   {hoverText}
   {rotateNumber}
   {crazyArrow}
