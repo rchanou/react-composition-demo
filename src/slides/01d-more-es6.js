@@ -69,7 +69,7 @@ const sumAll = (...all) => all.reduce( (sum, x) => sum + x );
 
 const sumOfAllAndMore = sumAll(...allNums, 1, 4, 9);
 // above becomes...     sumAll(2, 5, 7, 10, 3, 6, 8, 1, 4, 9)
-
+// note: object spread/rest is technically ES7. array spread/rest is ES6.
 
 ////////////////////////////////////////////////////////////////////////////////
 

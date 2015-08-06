@@ -19,7 +19,7 @@ class Flex extends React.Component {
       newStyle[key] = style[key];
     }
 
-    let Tag = tag;
+    let Tag = tag; // uppercase so it won't be converted to string
 
     return <Tag {...otherProps} style={newStyle} />;
   }

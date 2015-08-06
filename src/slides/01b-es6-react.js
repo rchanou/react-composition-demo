@@ -8,7 +8,7 @@ class ES6Component extends React.Component { // idiomatic ES6 class
 
   // state is just private property of class
   state = { highlighted: false }
-
+  // note: above property initializers are technically ES7 proposals, not ES6
 
   _onClick = e => {  // lambda; syntactic trick for auto-binding
     this.setState({ highlighted: !this.state.highlighted });

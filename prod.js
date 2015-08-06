@@ -20,7 +20,7 @@ var config = {
   ],
 
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/'
   },
@@ -31,7 +31,7 @@ var config = {
       "process.env": {
         NODE_ENV: JSON.stringify("production")
       }
-    }),    
+    }),
     new webpack.optimize.UglifyJsPlugin(), // minification plugin
     new ExtractTextPlugin('bundle.css'), // put css in separate bundle
     new webpack.NoErrorsPlugin()
@@ -58,7 +58,7 @@ var config = {
       },
       {
         test: /\.(eot|woff|ttf|svg|otf)/,
-        loader: 'file-loader',
+        loader: 'url-loader',//?name=[hash].[ext]',
         include: path.join(__dirname, 'src')
       }
     ]

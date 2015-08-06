@@ -17,7 +17,7 @@ class Hover extends React.Component {
     // that returns a React element
     let element = this.props.children(this.state.hovering);
 
-    // Since 'element' is a created React element (e.g. <div />),
+    // Since element variable is a created React element (e.g. <div />),
     // props must be added to it with React.cloneElement
     return React.cloneElement(element, this._eventHandlerProps);
   }
@@ -63,7 +63,7 @@ const rotateNumber =
   </Rotate>;
 
 
-const crazyArrow =
+const funSquare =
   <Rotate interval={30}>
     {angle => <Hover>
       {hovering => <div
@@ -87,7 +87,7 @@ const crazyArrow =
 const page = <div style={{ width: '100%', height: '100%' }}>
   {hoverText}
   {rotateNumber}
-  {crazyArrow}
+  {funSquare}
 </div>;
 
 export default page;

@@ -7,7 +7,7 @@ import '../css/toggle-style.css';
 // that looks like HTML
 
 // if tag is lowercase, it is assumed to be standard html
-// and is passed to createElement as a string
+// and is converted to a string when passed to createElement
 const a = <div>JSX is just JavaScript</div>;
 
 const b = React.createElement('div', null, 'JSX is just JavaScript');
