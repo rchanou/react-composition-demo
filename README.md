@@ -41,8 +41,9 @@ node dev
 ```
 Then open `http://localhost:3000` in your favorite browser.
 
-Now make valid changes in `src/slides/5-basic-composition.js`.
-Your changes will appear without reloading the browser like in [this video](http://vimeo.com/100010922).
+Now make changes in `src/slides/00-intro.js`.
+Applicable changes will appear without reloading the browser like in [this video](http://vimeo.com/100010922).
+If changes don't hot load, open your browser console to find out why.
 
 To run the production build process:
 ```
