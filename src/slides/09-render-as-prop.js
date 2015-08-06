@@ -1,5 +1,9 @@
 import React from 'react';
 
+// render as a prop: declarative way of exposing a component's state
+// by passing in a proxy render function as a child
+// with parameters that the component can inject state into
+
 class Hover extends React.Component {
   state = { hovering: false }
 
@@ -14,11 +18,9 @@ class Hover extends React.Component {
 
   render(){
     // for this component, this.props.children must be a function
-    // that returns a React element
+    // that returns a React element so this will work
     let element = this.props.children(this.state.hovering);
 
-    // Since element variable is a created React element (e.g. <div />),
-    // props must be added to it with React.cloneElement
     return React.cloneElement(element, this._eventHandlerProps);
   }
 }
@@ -79,9 +81,9 @@ const funSquare =
 
 
 ////////////////////////////////////////////////////////////////////////////////
-// you don't have to pass render as a child. it can be a normal prop.
-// it just looks better when you compose a bunch of them this way.
-// for more examples, check out react-motion and react-radio-group by @chenglou.
+// You don't have to pass render as a child. It can be a normal prop.
+// It just looks better when you compose a bunch of them this way.
+// For more examples, check out react-motion and react-radio-group by @chenglou.
 
 
 const page = <div style={{ width: '100%', height: '100%' }}>

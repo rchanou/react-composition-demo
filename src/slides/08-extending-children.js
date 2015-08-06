@@ -9,12 +9,17 @@ class RainbowList extends React.Component {
   render(){
     let { Tag, children, ...otherProps } = this.props;
 
+    /* 
+
+    */
     let rainbowChildren = React.Children.map(
       children,
       (child, i) => {
         let rainbowStyle = {
           color: `hsl(${360 / children.length * i},50%,60%)`
         };
+        // Since each child is a created React element (e.g. <div />),
+        // props must be added to it with React.cloneElement
         return React.cloneElement(child, { style: rainbowStyle });
       }
     );
