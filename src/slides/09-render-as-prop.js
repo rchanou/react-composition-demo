@@ -69,10 +69,9 @@ const crazyArrow =
       {hovering => <div
         style={{
           transform: `rotate(${angle}deg)`,
-          borderBottom: `40px solid ${hovering? 'pink': 'steelblue'}`,
-          width: 0, height: 0,
-          borderLeft: '20px solid transparent',
-          borderRight: '20px solid transparent',
+          backgroundColor: hovering? 'pink': 'steelblue',
+          width: 100,
+          height: 100
         }}
       />}
     </Hover>}
