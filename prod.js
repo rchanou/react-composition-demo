@@ -58,7 +58,7 @@ var config = {
       },
       {
         test: /\.(eot|woff|ttf|svg|otf)/,
-        loader: 'url-loader',//?name=[hash].[ext]',
+        loader: 'url-loader',
         include: path.join(__dirname, 'src')
       }
     ]

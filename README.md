@@ -7,6 +7,8 @@ This slideshow and demo will be/was presented by [Ronald ChanOu](http://twitter.
 at PeopleSpace (Irvine, CA), for the [ReactJS OC Meetup group](http://www.meetup.com/ReactJS-OC). The slideshow is itself a React
 component built using the techniques in the talk. Build it, browse to it, and use the left and right arrows to scroll through the slides.
 
+You can also just open **index.html** in the **dist** folder.
+
 ### Goals
 
 * Demo webpack build processes for both development and production
