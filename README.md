@@ -7,7 +7,7 @@ This slideshow and demo was presented by [Ronald ChanOu](http://twitter.com/rona
 at PeopleSpace (Irvine, CA), for the [ReactJS OC Meetup group](http://www.meetup.com/ReactJS-OC). The slideshow is itself a React
 component built using the techniques in the talk. Build it, browse to it, and use the left and right arrows to scroll through the slides.
 
-You can also just open **index.html** in the **dist** folder.
+You can also just download the repo and open **index.html** in the **dist** folder.
 
 ### Goals
 
@@ -60,4 +60,4 @@ You may want to change the host in `dev.js` from `localhost` to `0.0.0.0` to all
 * [Cheng Lou](https://github.com/chenglou) uses the "child render function"
   pattern such as in [react-motion](https://github.com/chenglou/react-motion)
 * The [react-future](https://github.com/reactjs/react-future) repo also demos some of these patterns
-* React maintainer [Sebastian Markbåge](https://twitter.com/sebmarkbage/) also has a lot to say about React composition.
+* React maintainer [Sebastian Markbåge](https://twitter.com/sebmarkbage/) also has a lot to say about React composition
