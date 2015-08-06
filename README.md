@@ -1,7 +1,7 @@
 React Composition Demo
 ======================
 
-(based on [react-hot-boilerplate](http://github.com/gaearon/react-hot-boilerplate) by [Dan Abramov](https://twitter.com/dan_abramov?lang=en))
+(built on [react-hot-boilerplate](http://github.com/gaearon/react-hot-boilerplate) by [Dan Abramov](https://twitter.com/dan_abramov?lang=en))
 
 This slideshow and demo was presented by [Ronald ChanOu](http://twitter.com/ronaldchanou)
 at PeopleSpace (Irvine, CA), for the [ReactJS OC Meetup group](http://www.meetup.com/ReactJS-OC). The slideshow is itself a React
