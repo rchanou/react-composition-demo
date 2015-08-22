@@ -1,10 +1,10 @@
 var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+
 /*
-  this is the transpilation script for deploying to production.
+  this is an example transpilation script for deploying to production.
   note that it extracts css intoa separate bundle.
   first, it creates a build folder if necessary.
   then, it copies the index.html file in root to the build folder.
@@ -20,7 +20,7 @@ var config = {
   ],
 
   output: {
-    path: path.join(__dirname),
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/'
   },
